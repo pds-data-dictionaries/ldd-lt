@@ -1,18 +1,18 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        13.0.2
+   LDDTool Version        10.0.0
    LDD Version Id:        1.0.0.0
-   LDD Label Version Id:  1.0
+   LDD Label Version Id:  1.22
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Jul 27 23:45:58 UTC 2021
+   Time                   Wed Feb 16 01:05:01 UTC 2022
    Common Schema          [PDS4_PDS_1G00.xsd]
    Common Schematron      [PDS4_PDS_1G00.sch]
    IM Version Id:         1.16.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.0
+   IM Label Version Id:   1.22
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
    IM Configuration File  [MDPTNConfigClassDisp.xml]
@@ -20,7 +20,7 @@ Configuration:
    IM Document Spec       [DMDocument.pins]
 
 Parameters:
-   Input File             [/home/runner/work/ldd-template/ldd-template/src/PDS4_EXAMPLE_IngestLDD.xml]
+   Input File             [/home/runner/work/ldd-lt/ldd-lt/src/PDS4_EXAMPLE_IngestLDD.xml]
    PDS Processing         true
    LDD Processing         true
    Discipline LDD         true
