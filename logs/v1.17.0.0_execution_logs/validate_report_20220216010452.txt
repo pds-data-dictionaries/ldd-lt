@@ -2,27 +2,27 @@
 PDS Validate Tool Report
 
 Configuration:
-   Version                       2.1.0
-   Date                          2021-10-31T16:41:43Z
+   Version                       2.1.4
+   Date                          2022-02-16T01:04:54Z
 
 Parameters:
-   Targets                       [file:/home/runner/work/ldd-template/ldd-template/test/test1_VALID.xml]
+   Targets                       [file:/home/runner/work/ldd-lt/ldd-lt/test/test1_VALID.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-template/ldd-template/build/development/4ded3283ed194e2b248b1d3f583f88230187c68e/1.17.0.0/PDS4_EXAMPLE_1H00_1000.xsd, file:/tmp/PDS4_PDS_1H00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-template/ldd-template/build/development/4ded3283ed194e2b248b1d3f583f88230187c68e/1.17.0.0/PDS4_EXAMPLE_1H00_1000.sch, file:/tmp/PDS4_PDS_1H00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-lt/ldd-lt/build/development/eb6a53d47a564229cbc1e33d69ff1fac1e0a3ea5/1.17.0.0/PDS4_EXAMPLE_1H00_1000.xsd, file:/tmp/PDS4_PDS_1H00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-lt/ldd-lt/build/development/eb6a53d47a564229cbc1e33d69ff1fac1e0a3ea5/1.17.0.0/PDS4_EXAMPLE_1H00_1000.sch, file:/tmp/PDS4_PDS_1H00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
    Data Content Validation       off
    Product Level Validation      on
    Max Errors                    100000
-   Registered Contexts File      /tmp/validate-2.1.0/resources/registered_context_products.json
+   Registered Contexts File      /tmp/validate-2.1.4/resources/registered_context_products.json
 
 
 
 Product Level Validation Results
 
-  PASS: file:/home/runner/work/ldd-template/ldd-template/test/test1_VALID.xml
+  PASS: file:/home/runner/work/ldd-lt/ldd-lt/test/test1_VALID.xml
       WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
         1 product validation(s) completed
 
@@ -45,5 +45,5 @@ Summary:
     1            warning.label.missing_schematron_spec
 
 End of Report
-Completed execution in 6193 ms
+Completed execution in 5322 ms
 
