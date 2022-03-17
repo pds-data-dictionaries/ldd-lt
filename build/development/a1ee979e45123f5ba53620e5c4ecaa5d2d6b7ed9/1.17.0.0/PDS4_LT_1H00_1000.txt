@@ -1,0 +1,215 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        13.1.0
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.23
+   LDD Discipline (T/F):  false
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Thu Mar 17 19:20:00 UTC 2022
+   Common Schema          [PDS4_PDS_1H00.xsd]
+   Common Schematron      [PDS4_PDS_1H00.sch]
+   IM Version Id:         1.17.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.23
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Configuration File  [MDPTNConfigClassDisp.xml]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-lt/ldd-lt/src/PDS4_LT_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         false
+   Mission LDD            true
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                4
+   Attributes             9
+   Associations           12
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               Lunar Trailblazer Mission Dictionary
+   LDD Version            1.0.0.0
+   Full Name              Susan Slavney
+   Steward                geo
+   Namespace Id           lt
+   Comment                
+    The Lunar Trailblazer mission dictionary contains classes and attributes specific to
+    the Lunar Trailblazer mission and its instruments.
+    
+    Lunar Trailblazer version 1.0.0.0 
+    PDS Build 1.17.0.0
+    LDDTool version 13.1.0
+    
+    Built with LDDTool -plJ  PDS4_LT_IngestLDD.xml
+    2022-02-10 GEO:shs Initial draft     
+  
+   Last Modification Time 2022-02-10T21:06Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   mission_phase_name
+   version                1.17
+   value data type        ASCII_Short_String_Preserved
+   description            The mission_phase_name identifies a time period within the mission.
+
+   name                   release_number
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            release_number is the identifier of a scheduled release of Lunar Trailblazer data from PDS. The first Lunar Trailblazer data release has release_number "01". The release_number for a given product is always the first release in which it appears, and does not change if the product is revised later.
+   nillable               true
+   minimum characters     1
+
+   name                   spacecraft_clock_partition
+   version                1.17
+   value data type        ASCII_Integer
+   description            The spacecraft_clock_partition provides the clock partition active for the spacecraft_clock_start and spacecraft_clock_stop attributes. This attribute may be used when the spacecraft_clock values do not include a partition number.
+   minimum value          1
+
+   name                   spacecraft_clock_start
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description             The spacecraft_clock_start is the value of the spacecraft clock at the beginning of an observation, in seconds. Values are formed according to the pattern [p/]dddddddddd[.fffffffff], where p is an optional partition number, dddddddddd is a whole number of seconds up to 10 digits, and .fffffffff is an optional fraction of a second up to 9 digits. The whole number and fraction are separated by a period. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used. 
+   minimum characters     1
+   maximum characters     19
+
+   name                   spacecraft_clock_stop
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description             The spacecraft_clock_stop is the value of the spacecraft clock at the end of an observation, in seconds. Values are formed according to the pattern [p/]dddddddddd[.fffffffff], where p is an optional partition number, dddddddddd is a whole number of seconds up to 10 digits, and .fffffffff is an optional fraction of a second up to 9 digits. The whole number and fraction are separated by a period. If a partition number and slash are not present, then the attribute spacecraft_clock_partition must be used. 
+   minimum characters     1
+   maximum characters     19
+
+   name                   hvm3_example1_text_attribute
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description             Example definition goes here. White space, indentation, etc. are preserved. It can be as long as you like. 
+   minimum characters     1
+   maximum characters     255
+
+   name                   hvm3_example2_text_attribute_withvalues
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description             Example definition goes here. White space, indentation, etc. are preserved. It can be as long as you like. 
+
+   name                   ltm_example3_realnumber
+   version                1.17
+   value data type        ASCII_Real
+   description             Example definition goes here 
+   minimum value          0
+   unit of measure type   Units_of_Length
+
+   name                   ltm_example4_integer
+   version                1.17
+   value data type        ASCII_Integer
+   description             Example definition goes here 
+   minimum value          0
+   unit of measure type   Units_of_Time
+
+Parsed Input - Classes:
+
+   name                   Observation_Information
+   description             The Observation_Information class provides information about a science observation. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lt.release_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lt.mission_phase_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lt.spacecraft_clock_start
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lt.spacecraft_clock_stop
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lt.spacecraft_clock_partition
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   HVM3_Parameters
+   description             put class definition here 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lt.hvm3_example1_text_attribute
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lt.hvm3_example2_text_attribute_withvalues
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   LTM_Parameters
+   description             put class definition here 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lt.ltm_example3_realnumber
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lt.ltm_example4_integer
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Lunar_Trailblazer_Parameters
+   description            The Lunar_Trailblazer_Parameters class is a superclass containing all LT mission classes.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lt.Observation_Information
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      lt.HVM3_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      lt.LTM_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+End of Report
