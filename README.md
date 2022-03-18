@@ -1,4 +1,4 @@
-# {LDD Name} Local Data Dictionary (LDD)
+# Lunar Trailblazer Mission Data Dictionary (LDD)
 
 ## Releases
 
