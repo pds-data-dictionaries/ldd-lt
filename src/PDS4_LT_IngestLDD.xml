@@ -10,7 +10,7 @@
   <name>Lunar Trailblazer Mission Dictionary</name>
   <ldd_version_id>1.0.0.0</ldd_version_id>
   <dictionary_type>Mission</dictionary_type>
-  <full_name>Susan Slavney</full_name>
+  <full_name>Daniel Politte</full_name>
   <steward_id>geo</steward_id>
   <namespace_id>lt</namespace_id>
   <comment>
@@ -73,6 +73,7 @@
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Preserved</value_data_type>
       <!-- Keep enumerated values in alphabetical order to avoid duplicates. -->
+      <!-- TODO: values corresponding to bundle phases? -->
       <DD_Permissible_Value> <value>ATLO</value>
         <value_meaning>The ATLO mission phase (Assembly, Test, and Launch Operations) is the 
           time of spacecraft and instrument assembly and test. During this phase data products 
@@ -102,6 +103,38 @@
       </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
+
+  <DD_Attribute>
+    <name>orbit_number</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.orbit_number</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>D. V. Politte</submitter_name>
+    <definition>
+      Orbit number at which this product's data were acquired
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <minimum_value>0</minimum_value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>  <name>producer_institution_name</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.producer_institution_name</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>D. V. Politte</submitter_name>
+    <definition>
+        The name of the institution providing the data in this product.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
   
   <DD_Attribute> <name>release_number</name>
     <version_id>1.0</version_id>
@@ -116,6 +149,23 @@
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <minimum_characters>1</minimum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>solar_beta_angle</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.solar_beta_angle</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Solar beta angle
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
     </DD_Value_Domain>
   </DD_Attribute>
 
@@ -188,57 +238,266 @@
     </DD_Value_Domain>
   </DD_Attribute>
 
+  <DD_Attribute>
+    <name>spacecraft_initial_pitch</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_initial_pitch</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft initial pitch
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>spacecraft_initial_roll</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_initial_roll</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft initial roll
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>spacecraft_initial_yaw</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_initial_yaw</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft initial yaw
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>spacecraft_pitch</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_pitch</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft pitch
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>spacecraft_pitch_rate</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_pitch_rate</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft pitch rate
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>spacecraft_roll</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_roll</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft roll
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>spacecraft_roll_rate</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_roll_rate</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft roll rate
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>spacecraft_rotation_x_axis</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_rotation_x_axis</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft rotation x-axis
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>spacecraft_rotation_y_axis</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_rotation_y_axis</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft rotation y-axis
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>spacecraft_rotation_z_axis</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_rotation_z_axis</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft rotation z-axis
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>spacecraft_yaw</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_yaw</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft yaw
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>spacecraft_yaw_rate</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.spacecraft_yaw_rate</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Spacecraft yaw rate
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
   <!-- End Attribute Definitions for the Observation_Information class -->
 
   <!-- Begin Attribute Definitions for the HVM3_Parameters Class  -->
 
-  <DD_Attribute>  <name>hvm3_example1_text_attribute</name>
+  <DD_Attribute>
+    <name>hvm3_product_type</name>
     <version_id>1.0</version_id>
-    <local_identifier>lt.hvm3_example1_text_attribute</local_identifier>
+    <local_identifier>lt.hvm3.hvm3_product_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>J. Dickson</submitter_name>
     <definition>
-        Example definition goes here.
-        White space, indentation, etc. are preserved.
-        It can be as long as you like.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <minimum_characters>1</minimum_characters>
-      <maximum_characters>255</maximum_characters>
-    </DD_Value_Domain>
-  </DD_Attribute>
-
-  <DD_Attribute>  <name>hvm3_example2_text_attribute_withvalues</name>
-    <version_id>1.0</version_id>
-    <local_identifier>lt.hvm3_example2_text_attribute_withvalues</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>J. Dickson</submitter_name>
-    <definition>
-      Example definition goes here.
-      White space, indentation, etc. are preserved.
-      It can be as long as you like.
+      Describes the processing level of a HVM3 product.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <DD_Permissible_Value>
-        <value>Lucy</value>
-        <value_meaning>definition goes here</value_meaning>
+        <value>raw</value>
+        <value_meaning>raw processing level</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Ricky</value>
-        <value_meaning>another definition goes here</value_meaning>
+        <value>calibrated</value>
+        <value_meaning>calibrated processing level</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Fred</value>
-        <value_meaning>another definition goes here</value_meaning>
+        <value>derived</value>
+        <value_meaning>derived processing level</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>instrument_mode</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.hvm3.instrument_mode</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Mode of HVM3 during data acquisition
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>WR</value>
+        <value_meaning>Wide regular</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Ethel</value>
-        <value_meaning>another definition goes here</value_meaning>
+        <value>WB</value>
+        <value_meaning>Wide binned</value_meaning>
       </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>NR</value>
+        <value_meaning>Narrow regular</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>NB</value>
+        <value_meaning>Narrow binned</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>product_version_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.hvm3.product_version_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Version of processing applied to create this product
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <minimum_value>0</minimum_value>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -246,37 +505,69 @@
   
   <!-- Begin Attribute Definitions for the LTM_Parameters Class  -->
 
-  <DD_Attribute>  <name>ltm_example3_realnumber</name>
+  <DD_Attribute>
+    <name>ltm_product_type</name>
     <version_id>1.0</version_id>
-    <local_identifier>lt.ltm_example3_realnumber</local_identifier>
+    <local_identifier>lt.ltm.ltm_product_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>J. Dickson</submitter_name>
     <definition>
-      Example definition goes here
+      Describes the processing level of a HVM3 product.
     </definition>
     <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Real</value_data_type>
-      <minimum_value>0</minimum_value>
-      <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-      <specified_unit_id>km</specified_unit_id>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>raw</value>
+        <value_meaning>raw processing level</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>calibrated</value>
+        <value_meaning>calibrated processing level</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>derived</value>
+        <value_meaning>derived processing level</value_meaning>
+      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   
-  <DD_Attribute>  <name>ltm_example4_integer</name>
+  <DD_Attribute>
+    <name>instrument_mode</name>
     <version_id>1.0</version_id>
-    <local_identifier>lt.ltm_example4_integer</local_identifier>
+    <local_identifier>lt.ltm.instrument_mode</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>J. Dickson</submitter_name>
     <definition>
-      Example definition goes here
+      Mode of LTM during data acquisition
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>TD</value>
+        <value_meaning>Time-delay</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>SI</value>
+        <value_meaning>Single Integration</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>product_version_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>lt.ltm.product_version_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>J. Dickson</submitter_name>
+    <definition>
+      Version of processing applied to create this product
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Integer</value_data_type>
       <minimum_value>0</minimum_value>
-      <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-      <specified_unit_id>ms</specified_unit_id>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -286,6 +577,7 @@
   <!-- *** Begin Class Definitions *** -->
   <!-- Observation_Information Class Definition -->
   <!-- Attributes are defined in the order required in the label:
+    TODO UPDATE ME
          release_number
          mission_phase_name
          spacecraft_clock_start
@@ -313,6 +605,12 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
+      <identifier_reference>lt.orbit_number</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
       <identifier_reference>lt.spacecraft_clock_start</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
@@ -330,11 +628,98 @@
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.producer_institution_name</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_roll</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_pitch</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_yaw</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_initial_roll</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_initial_pitch</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_initial_yaw</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_roll_rate</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_pitch_rate</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_yaw_rate</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_rotation_x_axis</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_rotation_y_axis</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.spacecraft_rotation_z_axis</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.solar_beta_angle</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
   </DD_Class>
+  
   <!-- End of Observation_Information Class Definition -->
 
   <!-- Begin HVM3_Parameters Class Definition -->
   <!-- Attributes are defined in the order required in the label:
+        TODO UPDATE ME
        <lt:HVM3_Parameters>
           <lt:hvm3_example1_text_attribute>
           <lt:hvm3_example2_text_attribute_withvalues>
@@ -344,16 +729,22 @@
     <local_identifier>lt.HVM3_Parameters</local_identifier>
     <submitter_name>J. Dickson</submitter_name>
     <definition>
-      put class definition here
+      Parameters that only apply to the LT instrument HVM3
     </definition>
     <DD_Association>
-      <identifier_reference>lt.hvm3_example1_text_attribute</identifier_reference>
+      <identifier_reference>lt.hvm3.hvm3_product_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>lt.hvm3_example2_text_attribute_withvalues</identifier_reference>
+      <identifier_reference>lt.hvm3.product_version_id</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.hvm3.instrument_mode</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -363,6 +754,7 @@
   
   <!-- Begin LTM_Parameters Class Definition -->
   <!-- Attributes are defined in the order required in the label:
+        TODO UPDATE ME
        <lt:LTM_Parameters>
           <lt:ltm_example3_realnumber>
           <lt:ltm_example4_integer>
@@ -372,18 +764,24 @@
     <local_identifier>lt.LTM_Parameters</local_identifier>
     <submitter_name>J. Dickson</submitter_name>
     <definition>
-      put class definition here
+      Parameters that only apply to the LT instrument LTM
     </definition>
     <DD_Association>
-      <identifier_reference>lt.ltm_example3_realnumber</identifier_reference>
+      <identifier_reference>lt.ltm.ltm_product_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>lt.ltm_example4_integer</identifier_reference>
+      <identifier_reference>lt.ltm.product_version_id</identifier_reference>
       <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>lt.ltm.instrument_mode</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
